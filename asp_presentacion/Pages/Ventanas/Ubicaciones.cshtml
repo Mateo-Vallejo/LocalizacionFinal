@@ -1,0 +1,80 @@
+﻿@page
+@model asp_presentacion.Pages.Ventanas.UbicacionesModel
+@{
+    ViewData["Title"] = "Gestión de Ubicaciones";
+}
+
+<h1>Gestión de Ubicaciones</h1>
+
+<div>
+    <label for="cliente">Nombre del cliente:</label>
+    <input type="text" id="cliente" placeholder="Ingrese el nombre del cliente" />
+    <label for="lat">Latitud:</label>
+    <input type="number" id="lat" placeholder="Latitud" step="any" />
+    <label for="lng">Longitud:</label>
+    <input type="number" id="lng" placeholder="Longitud" step="any" />
+    <button id="agregar">Agregar Ubicación</button>
+</div>
+
+<div id="map" style="height: 500px; margin-top: 20px;"></div>
+
+<h3>Lista de Ubicaciones:</h3>
+<ul id="ubicaciones">
+</ul>
+
+@section Scripts {
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        const ubicaciones = [];
+        const map = L.map('map').setView([0, 0], 2);
+
+        // Agregar mapa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        // Función para agregar ubicación al mapa
+        function agregarUbicacion(cliente, lat, lng) {
+            const marker = L.marker([lat, lng]).addTo(map)
+                .bindPopup(`<strong>${cliente}</strong>`).openPopup();
+            ubicaciones.push({ cliente, lat, lng, marker });
+
+            // Actualizar la lista de ubicaciones
+            const ul = document.getElementById('ubicaciones');
+            const li = document.createElement('li');
+            li.textContent = `${cliente} - [${lat}, ${lng}]`;
+            li.addEventListener('click', () => {
+                map.setView([lat, lng], 13);
+                marker.openPopup();
+            });
+            const eliminarBtn = document.createElement('button');
+            eliminarBtn.textContent = 'Eliminar';
+            eliminarBtn.addEventListener('click', () => {
+                map.removeLayer(marker);
+                ul.removeChild(li);
+                const index = ubicaciones.findIndex(u => u.marker === marker);
+                ubicaciones.splice(index, 1);
+            });
+            li.appendChild(eliminarBtn);
+            ul.appendChild(li);
+        }
+
+        // Evento para agregar ubicación desde la interfaz
+        document.getElementById('agregar').addEventListener('click', () => {
+            const cliente = document.getElementById('cliente').value;
+            const lat = parseFloat(document.getElementById('lat').value);
+            const lng = parseFloat(document.getElementById('lng').value);
+
+            if (!cliente || isNaN(lat) || isNaN(lng)) {
+                alert('Por favor ingrese un cliente, latitud y longitud válidos.');
+                return;
+            }
+
+            agregarUbicacion(cliente, lat, lng);
+            map.setView([lat, lng], 13);
+        });
+    </script>
+}

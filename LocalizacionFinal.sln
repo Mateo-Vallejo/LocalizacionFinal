@@ -17,21 +17,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_repositorios", "lib_rep
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mst_pruebas", "mst_pruebas\mst_pruebas.csproj", "{BBB723F2-5B75-4D92-BA46-4BB7DAA17796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_aplicaciones", "lib_aplicaciones\lib_aplicaciones.csproj", "{3FFCE7FB-3266-48D1-A935-35D8D1726E83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_aplicaciones", "lib_aplicaciones\lib_aplicaciones.csproj", "{3FFCE7FB-3266-48D1-A935-35D8D1726E83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asp_servicios", "asp_servicios\asp_servicios.csproj", "{E782D7CB-A2C2-4AA8-B363-CD219C96AB42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "asp_servicios", "asp_servicios\asp_servicios.csproj", "{E782D7CB-A2C2-4AA8-B363-CD219C96AB42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_utilidades", "lib_utilidades\lib_utilidades.csproj", "{BA4313C2-A9C4-4F6D-A2D2-91B6DD66C3D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_utilidades", "lib_utilidades\lib_utilidades.csproj", "{BA4313C2-A9C4-4F6D-A2D2-91B6DD66C3D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_lenguajes", "lib_lenguajes\lib_lenguajes.csproj", "{DEEDA601-E072-4C03-8201-AD86398230BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_lenguajes", "lib_lenguajes\lib_lenguajes.csproj", "{DEEDA601-E072-4C03-8201-AD86398230BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wpf_presentacion", "wpf_presentacion\wpf_presentacion.csproj", "{74974248-2821-40E8-B179-EDCA0CB93D74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wpf_presentacion", "wpf_presentacion\wpf_presentacion.csproj", "{74974248-2821-40E8-B179-EDCA0CB93D74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_comunicaciones", "lib_comunicaciones\lib_comunicaciones.csproj", "{887C1F01-D1D3-41CF-84E6-D37694BF1FDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_comunicaciones", "lib_comunicaciones\lib_comunicaciones.csproj", "{887C1F01-D1D3-41CF-84E6-D37694BF1FDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_presentaciones", "lib_presentaciones\lib_presentaciones.csproj", "{2F96CE7F-B00E-4DD3-8D90-4A9FEA1A6B50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lib_presentaciones", "lib_presentaciones\lib_presentaciones.csproj", "{2F96CE7F-B00E-4DD3-8D90-4A9FEA1A6B50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asp_presentacion", "asp_presentacion\asp_presentacion.csproj", "{1F69A3F0-BB57-4E8D-8457-FB16DE897EA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "asp_presentacion", "asp_presentacion\asp_presentacion.csproj", "{1F69A3F0-BB57-4E8D-8457-FB16DE897EA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
