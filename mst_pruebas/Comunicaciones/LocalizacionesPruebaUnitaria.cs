@@ -15,7 +15,7 @@ namespace mst_pruebas.Comunicaciones
         // Constructor para inicializar la comunicación
         public LocalizacionUsuario()
         {
-            iComunicacion = new LocalizacionComunicacion();
+            iComunicacion = new LocalizacionComunicacion(); // Corrección: Asegurarse de que LocalizacionComunicacion esté correctamente referenciado
         }
 
         [TestMethod] // Método principal que ejecuta todas las pruebas
@@ -33,7 +33,7 @@ namespace mst_pruebas.Comunicaciones
             var datos = new Dictionary<string, object>();
 
             // Ejecuta la operación de listar
-            var task = iComunicacion!.Listar(datos);
+            var task = iComunicacion!.Listar(datos); // Corrección: Asegurarse de que el método Listar esté definido en ILocalizacionComunicacion
             task.Wait();
             datos = task.Result;
 
@@ -52,7 +52,7 @@ namespace mst_pruebas.Comunicaciones
             };
 
             // Ejecuta la operación de búsqueda
-            var task = iComunicacion!.Buscar(datos);
+            var task = iComunicacion!.Buscar(datos); // Corrección: Asegurarse de que el método Buscar esté definido en ILocalizacionComunicacion
             task.Wait();
             datos = task.Result;
 
@@ -65,7 +65,7 @@ namespace mst_pruebas.Comunicaciones
         private void Guardar()
         {
             var datos = new Dictionary<string, object>();
-            entidad = new Localizacion()
+            entidad = new Localizacion() // Corrección: Asegurarse de que Localizacion esté correctamente referenciado
             {
                 UsuarioId = 1, // ID de usuario de prueba
                 Direccion = "Dirección de Prueba",
@@ -75,7 +75,7 @@ namespace mst_pruebas.Comunicaciones
             datos["Entidad"] = entidad!;
 
             // Ejecuta la operación de guardar
-            var task = iComunicacion!.Guardar(datos);
+            var task = iComunicacion!.Guardar(datos); // Corrección: Asegurarse de que el método Guardar esté definido en ILocalizacionComunicacion
             task.Wait();
             datos = task.Result;
 
@@ -92,7 +92,7 @@ namespace mst_pruebas.Comunicaciones
             datos["Entidad"] = entidad!;
 
             // Ejecuta la operación de modificar
-            var task = iComunicacion!.Modificar(datos);
+            var task = iComunicacion!.Modificar(datos); // Corrección: Asegurarse de que el método Modificar esté definido en ILocalizacionComunicacion
             task.Wait();
             datos = task.Result;
 
@@ -110,7 +110,7 @@ namespace mst_pruebas.Comunicaciones
             };
 
             // Ejecuta la operación de borrar
-            var task = iComunicacion!.Borrar(datos);
+            var task = iComunicacion!.Borrar(datos); // Corrección: Asegurarse de que el método Borrar esté definido en ILocalizacionComunicacion
             task.Wait();
             datos = task.Result;
 
